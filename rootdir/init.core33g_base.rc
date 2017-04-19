@@ -11,6 +11,12 @@ on init
     # Support Preload install apks
     mkdir /preload 0771 system system
 	
+    # See storage config details at https://source.android.com/devices/storage/
+
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
+
     #thermistor
     chown radio system /sys/class/sec/sec-thermistor/temp_adc
     chown radio system /sys/class/sec/sec-thermistor/temperature
